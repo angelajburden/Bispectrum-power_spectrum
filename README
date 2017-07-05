@@ -1,0 +1,23 @@
+
+
+#files located at
+
+/gpfs/scratch60/fas/padmanabhan/np274
+
+/gpfs/scratch60/fas/padmanabhan/np274/grace0/L1500/output/L1500Mpc1024/sims/delta0.0/r1
+
+
+./iogad 20 /gpfs/scratch60/fas/padmanabhan/np274/grace0/small/output/small128/sims/delta0.0/r1 snapshot 0 test_hist
+
+
+gcc -m64 -O3 -std=c99 -g  -Wextra -Wall -Wformat=3  -g -m64 -std=c99  -Wpacked  -Wnested-externs -Wpointer-arith  -Wredundant-decls  -Wfloat-equal -Wcast-qual  -Wshadow  -Wcast-align -Wmissing-declarations -Wmissing-prototypes  -Wnested-externs -fno-strict-aliasing -Wpadded -Wstrict-prototypes -Wconversion io_gadget.c -lm -o iogad
+
+bsub -Is -q interactive bash
+
+bsub < script_power
+
+bsub -n 4 -Is -XF -W 6:00 -M 5000 -R "span[hosts=1] rusage[mem=20000]" -q interactive bash
+for matlab ^ NB need to hve logged in with -X
+
+
+%%%%%%%

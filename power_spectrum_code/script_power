@@ -1,0 +1,12 @@
+#BSUB -J power_spectrum
+#BSUB -n 20
+#BSUB -R "span[hosts=1]"  # this script must run on only one node
+#BSUB -q shared
+#BSUB -W 0:30
+#BSUB -o outfile_ps.%J
+#BSUB -N
+
+module load Libs/FFTW/2.1.5
+#./power_sp  /gpfs/scratch60/fas/padmanabhan/np274/grace0/small/output/small128/sims/delta0.0/r1 snapshot_000 outputfile power_fileL300
+
+./power_sp  /gpfs/scratch60/fas/padmanabhan/np274/grace0/L1500/output/L1500Mpc1024/sims/delta0.0/r1 snapshot 001  outputfile power_fileL1500.1
