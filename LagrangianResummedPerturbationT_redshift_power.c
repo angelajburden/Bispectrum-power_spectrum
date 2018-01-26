@@ -1,4 +1,6 @@
-//Calculates the power spectrum in redshift space with LRT .
+//Calculates the power spectrum in redshift space with LRT based on https://arxiv.org/pdf/0711.2521.pdf
+//Resumming Cosmological Perturbations via the Lagrangian Picture
+
 //NB this is the old program that atempts to calculate the integrals.
 //They do not converge so use the compare_LRT.c program with the integrals pre-calculated in mathematica.
 #include "header.h"
